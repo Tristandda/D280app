@@ -1,0 +1,35 @@
+<header>World Map</header>
+<div class="container">
+      <div class="map-column">
+            <embed type="image/svg+xml" src="assets/world-map.svg" />
+      </div>
+
+      <div class="info-column">
+            <caption *ngIf="!isCountrySelected; else countryDataTemplate" [ngClass]="{'defaultMessage': !isCountrySelected}">{{ defaultInfoMessage }}</caption>
+      </div>
+      <ng-template #countryDataTemplate>
+            <table class="info-table" *ngIf="isCountrySelected || isCountryClicked">
+              <caption>{{ countryData?.name }}</caption>
+              <tr>
+                <td>Capital:</td>
+                <td>{{ countryData?.capitalCity }}</td>
+              </tr>
+              <tr>
+                <td>Region:</td>
+                <td>{{ countryData?.region?.value }}</td>
+              </tr>
+              <tr>
+                <td>Income:</td>
+                <td>{{ countryData?.incomeLevel?.value }}</td>
+              </tr>
+              <tr>
+                <td>Longitude:</td>
+                <td>{{ countryData?.longitude }}</td>
+              </tr>
+              <tr>
+                <td>Latitude:</td>
+                <td>{{ countryData?.latitude }}</td>
+              </tr>
+            </table>
+          </ng-template>    
+</div>
