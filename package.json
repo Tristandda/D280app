@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration=production && npx ngh --dir=dist/d280-app"
+    "deploy": "ng build --configuration=production && npx ngh --dir=docs"
   },
   "private": true,
   "dependencies": {
